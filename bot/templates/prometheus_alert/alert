@@ -1,0 +1,4 @@
+{% for alert in alerts %}  - {% if alert['status'] == 'resolved' %}💚{% else %}💔{% endif %} {{alert['labels']['instance']}}
+{{alert['labels']['alertname']}}
+{{alert['annotations']['description']}}
+{% endfor %}

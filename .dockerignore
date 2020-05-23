@@ -1,0 +1,8 @@
+*
+!bot/
+!Pipfile
+!Pipfile.lock
+!tasks.py
+!setup.cfg
+!entrypoint.sh
+!invoke.yaml

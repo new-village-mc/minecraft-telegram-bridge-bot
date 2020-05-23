@@ -1,0 +1,13 @@
+version: '3'
+
+services:
+  bot:
+    build: .
+    command: inv
+    environment:
+      - INVOKE_PROVIDER_CONFIG_HOST=''
+      - INVOKE_TOKEN=''
+      - INVOKE_CHANNEL=''
+      - INVOKE_MINECRAFT_URI=ws://localhost:8090
+    ports:
+      - 8080:8080
