@@ -47,11 +47,18 @@ class MinecraftWorker(BaseWorker):
         await self.ws.send(json_msg)
 
     async def run(self):
-        async with websockets.connect(self.uri) as websocket:
-            self.ws = websocket
-            while self.running:
-                message = await websocket.recv()
-                await self.process_message(message)
+        try:
+            async with websockets.connect(self.uri) as websocket:
+                self.ws = websocket
+                while self.running:
+                    message = await websocket.recv()
+                    await self.process_message(message)
+        except websockets.WebSocketException as e:
+            logging.error(e)
+            exit(1)
+        except Exception as e:
+            logging.error(e)
+            exit(1)
 
     async def stop(self):
         pass
