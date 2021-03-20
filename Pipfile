@@ -10,7 +10,7 @@ python_version = '3.7.5'
 invoke = "==1.1.1"
 schedule = "==0.5.0"
 pysocks = "==1.6.8"
-jinja2= "==2.10"
+jinja2= "==2.11.3"
 pytz = "==2018.5"
 aiotg = "==0.9.9"
 motor = "==2.1.0"
